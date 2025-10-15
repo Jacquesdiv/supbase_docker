@@ -1,0 +1,1 @@
+from supabase/storage-api:v1.28.0

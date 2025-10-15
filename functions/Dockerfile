@@ -1,0 +1,1 @@
+from supabase/edge-runtime:v1.69.6
