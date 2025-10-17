@@ -9,7 +9,9 @@ mkdir -p "$DATA_DIR"
 chown -R postgres:postgres "$DATA_DIR"
 chmod 700 "$DATA_DIR" || true
 
-mv /var/tmp_data/* $DATA_DIR
+if [ -d "$DATA_DIR" ] && [ -z "$(ls -A "$DATA_DIR")" ] && [ -d /var/tmp_data ] && [ "$(ls -A /var/tmp_data)" ]; then
+  mv /var/tmp_data/* "$DATA_DIR"
+fi
 
 # Export PGDATA so the upstream entrypoint *and* postgres use it
 export PGDATA="$DATA_DIR"
