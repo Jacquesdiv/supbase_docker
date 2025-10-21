@@ -1,4 +1,4 @@
-from supabase/edge-runtime:v1.69.6
+from supabase/edge-runtime:v1.69.14
 
 CMD [
     "start",
